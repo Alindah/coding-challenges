@@ -1,0 +1,18 @@
+# https://www.hackerrank.com/challenges/find-second-maximum-number-in-a-list/problem
+
+if __name__ == '__main__':
+    n = int(input())
+    arr = list(map(int, input().split()))
+    
+    winner = max(arr)
+    runner_up = -999
+
+    # Get the next largest number
+    for num in arr:
+        if num > runner_up and num != winner:
+            runner_up = num
+    
+    print(runner_up)
+
+# Time complexity: O(n)
+# Space complexity: O(1)
