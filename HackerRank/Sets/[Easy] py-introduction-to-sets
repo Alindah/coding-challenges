@@ -1,0 +1,12 @@
+# https://www.hackerrank.com/challenges/py-introduction-to-sets/submissions
+
+def average(array):
+    total_sum = []
+    for num in array:
+        if num not in total_sum:
+            total_sum.append(num)
+    
+    return sum(total_sum)/len(total_sum)
+
+# Time complexity: O(n)
+# Space complexity: O(n)
