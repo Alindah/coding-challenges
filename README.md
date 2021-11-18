@@ -5,7 +5,3 @@ Each file will contain
 - a link to the challenge
 - the code itself
 - time and space complexities
-
-Prefixes:
-- LC - LeetCode
-- HR - HackerRank
