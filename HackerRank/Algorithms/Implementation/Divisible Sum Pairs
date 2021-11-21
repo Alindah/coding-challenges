@@ -10,5 +10,5 @@ def divisibleSumPairs(n, k, ar):
 
     return numOfPairs
 
-# Time complexity: O(n)
+# Time complexity: ~O(n^2/2)
 # Space complexity: O(1)
