@@ -1,0 +1,14 @@
+# https://www.hackerrank.com/challenges/divisible-sum-pairs/problem
+
+def divisibleSumPairs(n, k, ar):
+    numOfPairs = 0
+    
+    for i in range(len(ar)):
+        for j in range(i + 1, len(ar)):
+            if (ar[i] + ar[j]) % k == 0:
+                numOfPairs += 1
+
+    return numOfPairs
+
+# Time complexity: O(n)
+# Space complexity: O(1)
