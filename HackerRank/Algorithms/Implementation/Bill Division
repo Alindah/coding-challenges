@@ -1,0 +1,12 @@
+# https://www.hackerrank.com/challenges/bon-appetit/problem
+
+def bonAppetit(bill, k, b):
+    actual_cost = (sum(bill) - bill[k]) / 2
+    
+    if actual_cost == b:
+        print("Bon Appetit")
+    else:
+        print(int(abs(actual_cost - b)))
+
+# Time complexity: O(n)
+# Space complexity: O(1)
