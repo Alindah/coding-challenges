@@ -1,0 +1,16 @@
+# https://leetcode.com/problems/two-sum/
+
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        dictionary = {}     # (key: number, value: index)
+    
+        for i in range(len(nums)):
+            dif = target - nums[i]
+            
+            if dif in dictionary:
+                return [dictionary[dif], i]
+            
+            dictionary[nums[i]] = i
+    
+# Time complexity: O(n)
+# Space complexity: O(n)
