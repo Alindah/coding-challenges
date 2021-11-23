@@ -1,0 +1,26 @@
+# https://leetcode.com/problems/binary-search
+
+class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+        floor = 0
+        ceiling = len(nums) - 1
+
+        # Return -1 if target is out of range
+        if target > nums[ceiling] or target < nums[floor]:
+            return -1
+        
+        # Binary search
+        while floor <= ceiling:
+            mid = (floor + ceiling) // 2
+
+            if nums[mid] == target:
+                return mid
+            elif target > nums[mid]:
+                floor = mid + 1
+            else:
+                ceiling = mid - 1
+        
+        return -1
+
+# Time complexity: O(log n)
+# Space complexity: O(1)
