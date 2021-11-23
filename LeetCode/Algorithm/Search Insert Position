@@ -1,0 +1,28 @@
+# https://leetcode.com/problems/search-insert-position
+
+class Solution:
+    def searchInsert(self, nums: List[int], target: int) -> int:
+        floor = 0
+        ceiling = len(nums) - 1
+        
+        # Account for out-of-range numbers
+        if target > nums[ceiling]:
+            return ceiling + 1
+        elif target < nums[floor]:
+            return floor
+
+        # Binary search
+        while floor <= ceiling:
+            mid = (floor + ceiling) // 2
+
+            if nums[mid] == target:
+                return mid
+            elif target > nums[mid]:
+                floor = mid + 1
+            else:
+                ceiling = mid - 1
+        
+        return floor if target < nums[floor] else ceiling
+
+# Time complexity: O(log n)
+# Space complexity: O(1)
