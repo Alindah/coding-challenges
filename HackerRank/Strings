@@ -1,0 +1,20 @@
+# https://www.hackerrank.com/challenges/swap-case/problem
+
+def swap_case(s):
+    swapped_s = ""
+    
+    for letter in s:
+        # Letter is uppercase
+        if ord(letter) >= 65 and ord(letter) <= 90:
+            swapped_s += (chr(ord(letter) + 32))
+        # Letter is lowercase
+        elif ord(letter) >= 97 and ord(letter) <= 122:
+            swapped_s += (chr(ord(letter) - 32))
+        # Otherwise it is not a letter and should be added to the new string unchanged
+        else:
+            swapped_s += letter
+            
+    return swapped_s
+
+# Time complexity: O(n)
+# Space complexity: O(n)
