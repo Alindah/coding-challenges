@@ -1,0 +1,30 @@
+# https://leetcode.com/problems/valid-parentheses/
+
+class Solution:
+    def isValid(self, s: str) -> bool:
+        brackets = {
+            '}': '{',
+            ')': '(',
+            ']':'['
+        }
+        
+        stack = []
+        
+        for b in s:
+            # If not in brackets dictionary, it is an open bracket
+            if b not in brackets:
+                stack.append(b)
+            # Otherwise, pop from the stack.
+            # If stack is empty or brackets do not match, return false 
+            else:
+                if not stack or stack.pop() != brackets[b]:
+                    return False
+        
+        # If stack is not empty, there are leftover open brackets
+        if stack:
+            return False
+        
+        return True
+
+# Time complexity: O(n)
+# Space complexity: O(n)
