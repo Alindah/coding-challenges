@@ -1,0 +1,44 @@
+# https://leetcode.com/problems/remove-linked-list-elements/
+
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+
+class Solution:
+    def removeElements(self, head: ListNode, val: int) -> ListNode:
+        # Return empty if list is empty.
+        if not head:
+            return head
+        
+        # If list starts with value, keep going down it until it does not.
+        while head.val == val:
+            head = head.next
+            
+            # If we reach this, the list contains only the value we want to delete. 
+            if not head:
+                return head
+        
+        pointer = head
+        pointer_ahead = head.next
+        
+        while pointer_ahead:
+            # If pointer_ahead is equal to val, keep going until we find an
+            # appropriate next for pointer.
+            if pointer_ahead.val == val:
+                pointer_ahead = pointer_ahead.next
+                pointer.next = None
+                continue
+             
+            if not pointer_ahead:
+                break
+            
+            pointer.next = pointer_ahead
+            pointer = pointer.next
+            pointer_ahead = pointer_ahead.next
+        
+        return head
+
+# Time complexity: O(n)
+# Space complexity: O(1)
