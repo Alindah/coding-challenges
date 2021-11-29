@@ -2,6 +2,7 @@
 
 # Inorder - Traverse to leftmost child first. Only record node when it has no left child 
 # or its left child has been accounted for, then head right and attempt to travel left whenever possible
+# LEFT - ROOT - RIGHT
 
 # Definition for a binary tree node.
 # class TreeNode:
