@@ -1,0 +1,36 @@
+# https://leetcode.com/problems/binary-tree-inorder-traversal/
+
+# Inorder - Traverse to leftmost child first. Only record node when it has no left child or its left child has been accounted for, then head right and attempt to travel left whenever possible
+
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+
+class Solution:
+    def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        inorder = []
+        unrecorded = []
+        visited = set()
+        
+        while root:
+            if not root.left or root.left in visited:
+                inorder.append(root.val)
+                visited.add(root)
+                
+                if root.right:
+                    root = root.right
+                elif unrecorded:
+                    root = unrecorded.pop()
+                else:
+                    break
+            else:
+                unrecorded.append(root)
+                root = root.left
+        
+        return inorder
+
+# Time complexity: O(n)
+# Space complexity: O(n)
