@@ -1,6 +1,7 @@
 # https://leetcode.com/problems/binary-tree-preorder-traversal/
 
 # Preorder - Traverse the tree from left to right, recording node when first visited
+# ROOT - LEFT - RIGHT
 
 # Definition for a binary tree node.
 # class TreeNode:
