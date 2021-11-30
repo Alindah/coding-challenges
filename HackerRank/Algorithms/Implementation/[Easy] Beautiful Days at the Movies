@@ -1,0 +1,32 @@
+# https://www.hackerrank.com/challenges/beautiful-days-at-the-movies/problem
+
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'beautifulDays' function below.
+#
+# The function is expected to return an INTEGER.
+# The function accepts following parameters:
+#  1. INTEGER i
+#  2. INTEGER j
+#  3. INTEGER k
+#
+
+def beautifulDays(i, j, k):
+    count = 0
+
+    for day in range(i, j + 1):
+        reverse_day = str(day)[::-1]
+        if abs(day - int(reverse_day)) % k == 0:
+            count += 1
+
+    return count
+
+# Time complexity: O(n), with n being difference between i and j
+# Space complexity: O(n), with n being number of digits in integer
