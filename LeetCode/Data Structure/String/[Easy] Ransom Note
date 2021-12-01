@@ -1,0 +1,24 @@
+# https://leetcode.com/problems/ransom-note/
+
+class Solution:
+    def canConstruct(self, ransomNote: str, magazine: str) -> bool:
+        letters_in_mag = {}
+        
+        # Count letters in magazine
+        for l in magazine:
+            if l in letters_in_mag:
+                letters_in_mag[l] += 1
+            else:
+                letters_in_mag[l] = 1
+        
+        # Check if letters from magazine can construct the ransom note
+        for l in ransomNote:
+            if l in magazine and letters_in_mag[l] > 0:
+                letters_in_mag[l] -= 1
+            else:
+                return False
+        
+        return True
+
+# Time complexity: O(n)
+# Space complexity: O(n)
