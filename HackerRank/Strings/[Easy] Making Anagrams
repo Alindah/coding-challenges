@@ -1,0 +1,36 @@
+# https://www.hackerrank.com/challenges/ctci-making-anagrams/problem
+
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+from collections import Counter
+
+#
+# Complete the 'makeAnagram' function below.
+#
+# The function is expected to return an INTEGER.
+# The function accepts following parameters:
+#  1. STRING a
+#  2. STRING b
+#
+
+def makeAnagram(a, b):
+    a_dict = Counter(a)
+    b_dict = Counter(b)
+    shared_set = set(a).intersection(set(b))
+    difference = len(a) + len(b)    # Start with count of all and subtract similar letters
+    
+    # Compare difference in count
+    for l in shared_set:
+        difference -= min(a_dict[l], b_dict[l]) * 2
+    
+    print(difference)
+        
+    return(difference)
+
+# Time complexity: O(n)
+# Space complexity: O(n)
