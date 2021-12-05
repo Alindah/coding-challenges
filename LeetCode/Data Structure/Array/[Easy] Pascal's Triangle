@@ -22,3 +22,25 @@ class Solution:
     
 # Time complexity: O(n^2)?
 # Space complexity: O(n^2)
+
+# Update: Less space used
+
+class Solution:
+    def generate(self, numRows: int) -> List[List[int]]:        
+        if numRows == 1:
+            return [[1]]
+        elif numRows == 2:
+            return [[1], [1, 1]]
+        else:
+            pas = [[1], [1,1]]
+        
+        for row in range(3, numRows + 1):
+            new_row = []
+            
+            for i in range(len(pas[row - 2]) - 1):
+                new_row.append(pas[row - 2][i] + pas[row - 2][i + 1])
+                
+            pas.append([1] + new_row + [1])
+        
+        return pas
+        
