@@ -1,0 +1,24 @@
+# https://www.hackerrank.com/challenges/the-hurdle-race/problem
+
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'hurdleRace' function below.
+#
+# The function is expected to return an INTEGER.
+# The function accepts following parameters:
+#  1. INTEGER k
+#  2. INTEGER_ARRAY height
+#
+
+def hurdleRace(k, height):
+    return max(height) - k if k < max(height) else 0
+
+# Time complexity: O(n)
+# Space complexity: O(1)
