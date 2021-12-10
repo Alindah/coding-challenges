@@ -1,0 +1,21 @@
+# https://www.hackerrank.com/challenges/text-wrap/problem
+
+import textwrap
+
+def wrap(string, max_width):
+    new_string = ""
+
+    for i in range(len(string)):
+        if i > 0 and i % max_width == 0:
+            new_string += '\n'
+        new_string += string[i]
+    
+    return new_string
+
+# Time complexity: O(n)
+# Space complexity: O(n)
+
+if __name__ == '__main__':
+    string, max_width = input(), int(input())
+    result = wrap(string, max_width)
+    print(result)
