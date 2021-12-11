@@ -1,0 +1,30 @@
+# https://www.hackerrank.com/challenges/utopian-tree/problem
+
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'utopianTree' function below.
+#
+# The function is expected to return an INTEGER.
+# The function accepts INTEGER n as parameter.
+#
+
+def utopianTree(n):
+    height = 1
+
+    for i in range(n):
+        if i % 2 == 1:
+            height += 1
+        else:
+            height *= 2
+
+    return height
+
+# Time complexity: O(n)
+# Space complexity: O(1)
