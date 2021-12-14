@@ -1,0 +1,34 @@
+# https://www.hackerrank.com/challenges/taum-and-bday/problem
+
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'taumBday' function below.
+#
+# The function is expected to return a LONG_INTEGER.
+# The function accepts following parameters:
+#  1. INTEGER b
+#  2. INTEGER w
+#  3. INTEGER bc
+#  4. INTEGER wc
+#  5. INTEGER z
+#
+
+def taumBday(b, w, bc, wc, z):
+    cost_wo_conversion = b * bc + w * wc
+    
+    if bc < wc:
+        cost_w_conversion = bc * (b + w) + w * z
+    else:
+        cost_w_conversion = wc * (b + w) + b * z
+        
+    return min(cost_wo_conversion, cost_w_conversion)
+
+# Time complexity: O(1)
+# Space complexity: O(1)
