@@ -1,0 +1,9 @@
+# https://www.hackerrank.com/challenges/python-mutations/problem
+
+def mutate_string(string, position, character):
+    new_str = list(string)
+    new_str[position] = character
+    return ''.join(new_str)
+
+# Time complexity: O(1)
+# Space complexity: O(n)
