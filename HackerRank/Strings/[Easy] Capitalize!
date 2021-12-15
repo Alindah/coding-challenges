@@ -1,0 +1,27 @@
+# https://www.hackerrank.com/challenges/capitalize/problem
+
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the solve function below.
+def solve(s):
+    processed_name = ""
+    
+    for i in range(len(s)):
+        char = s[i]
+
+        if ord(s[i]) >= 97 and ord(s[i]) <= 122:
+            if i == 0 or s[i - 1] == ' ':
+                char = chr(ord(s[i]) - 32)
+
+        processed_name += char
+        
+    return processed_name
+
+# Time complexity: O(n)
+# Space complexity: O(n)
