@@ -1,0 +1,23 @@
+# https://www.hackerrank.com/challenges/alphabet-rangoli
+
+def print_rangoli(size):
+    width = 4 * size - 3        # Width of rangoli
+    ascii_letter = 96 + size    # Last ASCII letter in rangoli
+    rangoli = ""
+    letters = []
+    lines = []
+    
+    # Create the first half of the rangoli
+    for i in range(size):
+        letters.append(chr(ascii_letter - i))
+        line = '-'.join(letters + letters[:-1][::-1])
+        dashes = int((width - len(line)) / 2) * '-'
+        lines.append(dashes + line + dashes)
+
+    # Mirror the half to create full rangoli
+    lines += lines[:-1][::-1]
+    rangoli = '\n'.join(lines)
+    print(rangoli)
+
+# Time complexity: O(n)
+# Space complexity: O(n)
