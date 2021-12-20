@@ -1,0 +1,7 @@
+# https://www.hackerrank.com/challenges/ctci-array-left-rotation/problem
+
+def rotLeft(a, d):
+    return a[d:] + a[:d]
+
+# Time complexity: O(1)
+# Space complexity: O(n)
