@@ -1,0 +1,32 @@
+# https://www.hackerrank.com/challenges/ctci-ransom-note/problem
+
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+from collections import Counter
+
+#
+# Complete the 'checkMagazine' function below.
+#
+# The function accepts following parameters:
+#  1. STRING_ARRAY magazine
+#  2. STRING_ARRAY note
+#
+
+def checkMagazine(magazine, note):
+    counter = Counter(magazine)
+    
+    for word in note:
+        if word in counter and counter[word] > 0:
+            counter[word] -= 1
+        else:
+            return print("No")
+    
+    return print("Yes")
+
+# Time complexity: O(n)
+# Space complexity: O(n)
