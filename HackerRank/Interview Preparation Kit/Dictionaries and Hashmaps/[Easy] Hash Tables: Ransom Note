@@ -30,3 +30,16 @@ def checkMagazine(magazine, note):
 
 # Time complexity: O(n)
 # Space complexity: O(n)
+
+
+# Neater solution:
+def checkMagazine(magazine, note):
+    counter_m=Counter(magazine)
+    counter_n=Counter(note)
+    if counter_n - counter_m == {}:
+        print ('Yes')
+    else:
+        print ('No')
+
+# Time complexity: O(n)
+# Space complexity: O(n)
