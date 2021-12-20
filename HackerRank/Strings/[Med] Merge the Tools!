@@ -1,0 +1,13 @@
+# https://www.hackerrank.com/challenges/merge-the-tools/problem
+
+def merge_the_tools(string, k):
+    for i in range(0, len(string), k):
+        seen = set()
+        for j in string[i : i + k]:
+            if j not in seen:
+                print(j, end = '')
+                seen.add(j)
+        print('')
+
+# Time complexity: O(n)
+# Space complexity: O(n)
