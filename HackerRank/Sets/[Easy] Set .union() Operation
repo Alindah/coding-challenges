@@ -1,0 +1,7 @@
+# https://www.hackerrank.com/challenges/py-set-union/problem
+
+_, a, _, b = input(), set(input().split()), input(), set(input().split())
+print(len(a.union(b)))
+
+# Time complexity: O(1)
+# Space complexity: O(n)
