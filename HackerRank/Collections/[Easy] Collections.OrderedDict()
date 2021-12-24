@@ -1,0 +1,21 @@
+# https://www.hackerrank.com/challenges/py-collections-ordereddict/problem
+
+from collections import OrderedDict
+
+items = OrderedDict()
+
+for _ in range(int(input())):
+    i = input().split()
+    i_price = int(i[-1])
+    i_name = " ".join(i[:-1])
+    
+    if i_name in items:
+        items[i_name] += i_price
+    else:
+        items[i_name] = i_price
+
+for n, p in items.items():
+    print(n, p)
+    
+# Time complexity: O(n)
+# Space complexity: O(n)
