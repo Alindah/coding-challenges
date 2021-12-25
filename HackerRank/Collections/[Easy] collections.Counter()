@@ -1,0 +1,20 @@
+# https://www.hackerrank.com/challenges/collections-counter/problem
+
+from collections import Counter
+
+profit = 0
+
+_, stock = input(), Counter(input().split())
+
+for i in range(int(input())):
+    c = input().split()
+    size, price = c[0], int(c[1])
+
+    if stock[size] and stock[size] > 0:
+        stock[size] -= 1
+        profit += price
+
+print(profit)
+
+# Time complexity: O(n)
+# Space complexity: O(n)
