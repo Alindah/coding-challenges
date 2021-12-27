@@ -1,0 +1,12 @@
+# https://www.hackerrank.com/challenges/itertools-product/problem
+
+from itertools import product
+
+a= [int(n) for n in input().split()]
+b = [int(n) for n in input().split()]
+
+for p in product(a, b):
+    print(p, end = ' ')
+
+# Time complexity: O(n^2)
+# Space complexity: O(n^2)?
