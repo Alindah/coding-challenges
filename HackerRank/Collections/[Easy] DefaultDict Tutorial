@@ -1,0 +1,27 @@
+# https://www.hackerrank.com/challenges/defaultdict-tutorial/problem
+
+from collections import defaultdict
+
+size = input().split()
+d = defaultdict(list)
+index = 1
+
+# Get group A
+for i in range(int(size[0])):
+    d[input()].append(index)
+    index += 1
+
+index = 0
+
+# Get group B
+for i in range(int(size[1])):
+    num = input()
+    
+    if num in d:
+        [print(n, end = ' ') for n in d[num]]
+        print()
+    else:
+        print(-1)
+
+# Time complexity: O(n) (n * m actually?)
+# Space complexity: O(n)
