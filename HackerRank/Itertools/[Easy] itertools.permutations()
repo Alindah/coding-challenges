@@ -1,0 +1,10 @@
+# https://www.hackerrank.com/challenges/itertools-permutations/problem
+
+from itertools import permutations
+
+inp = input().split()
+perm = sorted([''.join(p) for p in list(permutations(inp[0], int(inp[1])))])
+
+for p in perm:
+    print(p)
+    
