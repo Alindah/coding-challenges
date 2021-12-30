@@ -1,0 +1,15 @@
+# https://www.hackerrank.com/challenges/exceptions/problem
+# Note: This challenge requires lines 9 and 10 because the standard error message does not match the one used in HR's accepted solution
+
+for n in range(int(input())):
+    val = input().split()
+    
+    try:
+        print(int(val[0])//int(val[1]))
+    except ZeroDivisionError:
+        print("Error Code: integer division or modulo by zero")
+    except Exception as e:
+        print("Error Code:", e)
+        
+# Time complexity: O(1)
+# Space complexity: O(1)
