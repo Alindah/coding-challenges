@@ -1,0 +1,11 @@
+# https://www.hackerrank.com/challenges/calendar-module/problem
+
+import calendar
+from datetime import date
+
+inp = [int(n) for n in input().split()]
+date = date(inp[2], inp[0], inp[1])
+print((calendar.day_name[date.weekday()]).upper())
+
+# Time complexity: O(1)
+# Space complexity: O(1)
