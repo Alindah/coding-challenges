@@ -1,0 +1,12 @@
+# https://www.hackerrank.com/challenges/symmetric-difference/problem
+
+for i in input():
+    m = set(map(int, input().split()))
+
+for i in input():
+    n = set(map(int, input().split()))
+    
+[print(num) for num in sorted(m.union(n).difference(m.intersection(n)))]
+
+# Time complexity: O(n)
+# Space complexity: O(n)
