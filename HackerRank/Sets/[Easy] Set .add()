@@ -1,0 +1,11 @@
+# https://www.hackerrank.com/challenges/py-set-add/problem
+
+stamps = set()
+
+for s in range(int(input())):
+    stamps.add(input())
+
+print(len(stamps))
+
+# Time complexity: O(n)
+# Space complexity: O(n)
