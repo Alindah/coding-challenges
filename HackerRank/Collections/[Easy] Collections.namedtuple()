@@ -1,0 +1,17 @@
+# https://www.hackerrank.com/challenges/py-collections-namedtuple/problem
+
+from collections import namedtuple
+
+num_students = int(input())
+Student = namedtuple('Student', input())
+marks_sum = 0
+
+for i in range(num_students):
+    att = input().split()
+    student = Student(att[0], att[1], att[2], att[3])
+    marks_sum += int(student.MARKS)
+    
+print(marks_sum / num_students)
+
+# Time complexity: O(n)
+# Space complexity: O(n)
