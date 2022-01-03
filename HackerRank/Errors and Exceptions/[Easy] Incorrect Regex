@@ -1,0 +1,13 @@
+# https://www.hackerrank.com/challenges/incorrect-regex/problem
+
+import re
+
+for i in range(int(input())):
+    try:
+        re.compile(input())
+        print(True)
+    except:
+        print(False)
+
+# Time complexity: O(n)
+# Space complexity: O(1)
