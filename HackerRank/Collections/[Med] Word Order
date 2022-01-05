@@ -1,0 +1,21 @@
+# https://www.hackerrank.com/challenges/word-order/problem
+
+from collections import OrderedDict
+
+counter = OrderedDict()
+
+for i in range(int(input())):
+    word = input()
+    
+    if word not in counter:
+        counter[word] = 1
+    else:
+        counter[word] += 1
+
+print(len(counter))
+        
+for word in counter:
+    print(counter[word], end = ' ')
+
+# Time complexity: O(n)
+# Space complexity: O(n)
