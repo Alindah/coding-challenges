@@ -1,0 +1,17 @@
+# https://www.hackerrank.com/challenges/most-commons/problem
+
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+from collections import Counter
+
+if __name__ == '__main__':
+    counter = sorted(Counter(input()).items(), key = lambda x: (-x[1], x[0]))[:3]
+    [print(k, v) for k, v in counter]
+    
+# Time complexity: O(n lg n)
+# Space complexity: O(n)
