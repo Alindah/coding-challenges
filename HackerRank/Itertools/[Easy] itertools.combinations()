@@ -1,0 +1,13 @@
+# https://www.hackerrank.com/challenges/itertools-combinations/problem
+
+from itertools import combinations
+
+inp = input().split()
+string, size = sorted(inp[0]), int(inp[1])
+
+for i in range(1, size + 1):
+    for c in combinations(string, i):
+        print(''.join(c))
+
+# Time complexity: O(n^2)?
+# Space complexity: O(n)
