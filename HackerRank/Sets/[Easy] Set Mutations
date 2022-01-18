@@ -1,0 +1,13 @@
+# https://www.hackerrank.com/challenges/py-set-mutations/problem
+
+_, a, n = input(), set(map(int, input().split())), int(input())
+
+for i in range(n):
+    cmd = input().split()[0]
+    b = set(map(int, input().split()))
+    exec("a.{}(b)".format(cmd))
+
+print(sum(a))
+
+# Time complexity: O(n * m)? with m being the number of operations and n being the size of the input set
+# Space complexity: O(n)
