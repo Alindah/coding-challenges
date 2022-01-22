@@ -26,3 +26,10 @@ print("{}{}".format(round(mbc), chr(176)))
 
 # Time complexity: O(1)
 # Space complexity: O(1)
+
+# BETTER SOLUTION
+# For some reason I thought TOA can only be used on right angles
+
+import math
+ab, bc = int(input()), int(input())
+print(str(int(round(math.degrees(math.atan2(ab, bc))))) +  chr(176))
