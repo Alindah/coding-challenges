@@ -1,0 +1,14 @@
+# https://www.hackerrank.com/challenges/find-angle/problem
+
+import math
+
+ab, bc = int(input()), int(input())
+ac = math.sqrt(ab**2 + bc**2)
+
+# SOH CAH TOA
+# Step 1: Find angle MCB by using inverse CAH
+mcb = math.acos(bc / ac)
+
+# Step 2: Convert from radian to angle
+mcb *= 180 / math.pi 
+print(mcb)
