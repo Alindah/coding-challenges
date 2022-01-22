@@ -4,6 +4,7 @@ import math
 
 ab, bc = int(input()), int(input())
 ac = math.sqrt(ab**2 + bc**2)
+mc = ac / 2
 
 # SOH CAH TOA
 # Step 1: Find angle MCB by using inverse CAH
@@ -11,4 +12,14 @@ mcb = math.acos(bc / ac)
 
 # Step 2: Convert from radian to angle
 mcb *= 180 / math.pi 
-print(mcb)
+
+# Step 3: Use Law of Cosine to find BM
+# c^2 = a^2 + b^2 - 2ab(cos(C))
+bm = math.sqrt(bc**2 + mc**2 - 2 * bc * mc * math.cos(mcb))
+
+# Step 4: Use Law of Sines to find theta
+# a / sin(A) = b / sin(B) = c / sin(C)
+# Thus, mc / sin(theta) = bm / sin(mcb)
+# sin(theta) = mc * sin(mcb) / bm
+mbc = math.asin(mc * math.sin(mcb) / bm) * (180 / math.pi)
+print(mbc)
