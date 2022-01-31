@@ -1,15 +1,13 @@
 # https://www.hackerrank.com/challenges/zipped/problem
 
-inp = list(map(int, input().split()))
-student_id, size = list(range(1, inp[0] + 1)), inp[1]
+n, x = list(map(int, input().split()))
 avg_scores = []
 
-for i in range(size):
-    marks = list(map(float, input().split()))
-    avg_scores += [marks]
+for _ in range(x):
+    avg_scores.append(list(map(float, input().split())))
 
-for s in tuple(zip(*avg_scores)):
-    print(sum(s) / size)
+for s in zip(*avg_scores):
+    print(sum(s) / x)
     
 # Time complexity: O(n)
 # Space complexity: O(n)
