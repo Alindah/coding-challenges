@@ -1,0 +1,7 @@
+# https://www.hackerrank.com/challenges/py-set-difference-operation/problem
+
+_, eng, _, fra = input(), set(map(int, input().split())), input(), set(map(int, input().split()))
+print(len(eng.difference(fra)))
+
+# Time complexity: O(n)
+# Space complexity: O(n)
