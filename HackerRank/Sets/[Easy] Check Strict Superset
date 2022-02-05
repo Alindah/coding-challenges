@@ -1,0 +1,16 @@
+# https://www.hackerrank.com/challenges/py-check-strict-superset/problem
+
+a = set(map(int, input().split()))
+isStrictSuperSet = True
+
+for i in range(int(input())):
+    b = set(map(int, input().split()))
+
+    if not (a.issuperset(b) and len(a.difference(b)) > 0):
+        isStrictSuperSet = False
+        break
+
+print(isStrictSuperSet)
+
+# Time complexity: O(n)
+# Space complexity: O(n)
