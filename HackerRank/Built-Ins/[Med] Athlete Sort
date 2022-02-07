@@ -1,0 +1,29 @@
+# https://www.hackerrank.com/challenges/python-sort-sort/problem
+
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+if __name__ == '__main__':
+    n, m = map(int, input().split())
+    arr = []
+
+    # Put data in array
+    for _ in range(n):
+        arr.append(list(map(int, input().rstrip().split())))
+
+    k = int(input())
+    
+    # Sort by index k
+    arr.sort(key = lambda arr: arr[k])
+    
+    # Print out results
+    for athlete in arr:
+        print(*athlete)
+
+# Time complexity: O(n)
+# Space complexity: O(n)
