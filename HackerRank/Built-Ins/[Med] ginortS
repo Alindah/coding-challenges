@@ -1,0 +1,21 @@
+# https://www.hackerrank.com/challenges/ginorts/problem
+
+string = sorted(list(input()))
+lower, upper, odd, even = [], [], [], []
+
+for c in string:
+    if c.isdigit():
+        if int(c) % 2 == 0:
+            even.append(c)
+        else:
+            odd.append(c)
+    else:
+        if c.islower():
+            lower.append(c)
+        elif c.isupper():
+            upper.append(c)
+            
+print(''.join(lower + upper + odd + even))
+
+# Time complexity: O(n lg n)
+# Space complexity: O(n)
