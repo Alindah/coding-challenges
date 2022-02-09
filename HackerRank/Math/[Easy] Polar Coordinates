@@ -1,0 +1,8 @@
+import cmath
+
+polar = cmath.polar(complex(input()))
+print(polar[0])     # r
+print(polar[1])     # phi
+
+# Time complexity: O(1)
+# Space complexity: O(1)
