@@ -1,0 +1,9 @@
+# https://www.hackerrank.com/challenges/introduction-to-regex/problem
+
+import re
+
+for _ in range(int(input())):
+    print(bool(re.search("^[+-]?[\d]*\.{1}[\d]+$", input())))
+
+# Time complexity: O(n)
+# Space complexity: O(n)
