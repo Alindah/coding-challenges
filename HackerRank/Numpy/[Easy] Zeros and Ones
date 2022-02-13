@@ -1,0 +1,11 @@
+# https://www.hackerrank.com/challenges/np-zeros-and-ones/problem
+
+import numpy
+
+arr = list(map(int, input().split()))
+
+print(numpy.zeros(arr, dtype = numpy.int))
+print(numpy.ones(arr, dtype = numpy.int))
+
+# Time complexity: O(n)
+# Space complexity: O(n)
