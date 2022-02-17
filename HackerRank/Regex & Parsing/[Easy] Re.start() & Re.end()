@@ -1,0 +1,20 @@
+# https://www.hackerrank.com/challenges/re-start-re-end/problem
+
+import re
+s, k = input(), input()
+m = re.search(k, s)
+start, end = 0, 0
+
+if not m:
+    print((-1, -1))
+
+while m:
+    start, end = m.start() + end, m.end() + end - 1
+    tup = tuple((start, end))
+    print(tup)
+    if start == end:
+        end += 1
+    m = re.search(k, s[end:])
+
+# Time complexity: O(n)
+# Space complexity: O(n)
