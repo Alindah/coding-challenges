@@ -1,0 +1,19 @@
+# https://www.hackerrank.com/challenges/re-findall-re-finditer/problem
+
+import re
+
+consonents = "[qwrtypsdfghjklzxcvbnm]"
+vowels = "[aeiou]"
+
+# Equivalent to "(?<=[qwrtypsdfghjklzxcvbnm])([aeiou]{2,})[qwrtypsdfghjklzxcvbnm]"
+# ?<= is a positive lookahead
+r = "(?<=" + consonents + ")(" + vowels + "{2,})" + consonents
+
+# re.I = re.IGNORECASE
+res = re.findall(r, input(), re.I)
+
+# Joins a new line to each item in res or return -1 if none found
+print('\n'.join(res or ['-1']))
+    
+# Time complexity: O(n)
+# Space complexity: O(n)
