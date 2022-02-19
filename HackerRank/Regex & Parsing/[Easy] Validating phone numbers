@@ -1,0 +1,9 @@
+# https://www.hackerrank.com/challenges/validating-the-phone-number/problem
+
+import re
+
+for _ in range(int(input())):
+    print("YES") if re.match("^[7-9]\d{9}$", input()) else print("NO")
+
+# Time complexity: O(n)
+# Space complexity: O(1)
