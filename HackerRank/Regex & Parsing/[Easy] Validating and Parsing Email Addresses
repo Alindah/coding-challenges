@@ -1,0 +1,11 @@
+# https://www.hackerrank.com/challenges/validating-named-email-addresses/problem
+
+import re, email.utils
+
+for _ in range(int(input())):
+    name, address = email.utils.parseaddr(input())
+    if re.search(r"^[a-z]+[\w\-\.]*@[a-z]+\.[a-z]{1,3}$", address, re.I):
+        print(email.utils.formataddr((name, address)))
+    
+# Time complexity: O(n)
+# Space complexity: O(n)
