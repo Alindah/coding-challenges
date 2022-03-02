@@ -1,0 +1,7 @@
+# https://www.hackerrank.com/challenges/python-quest-1/problem
+
+for i in range(1, int(input())):
+    print(int(i/9 * 10**i))
+
+# Time complexity: O(n)
+# Space complexity: O(1)
