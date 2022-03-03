@@ -1,0 +1,12 @@
+# https://www.hackerrank.com/challenges/re-sub-regex-substitution/problem
+
+import re
+
+def replace(string):
+    return "and" if '&' in string[0] else "or"
+
+for _ in range(int(input())):
+    print(re.sub(r"(?<= )([&|])\1{1}(?= )", replace, input()))
+    
+# Time complexity: O(n)
+# Space complexity: O(n)
